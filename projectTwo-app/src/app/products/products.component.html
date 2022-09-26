@@ -1,0 +1,22 @@
+<p>carts works!</p>
+
+<table>
+    <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price Movie</th>
+        <th>Year released</th>
+        <th>Ratings</th>
+    </thead>
+    <tbody>
+        <tr class="product" routerLink="/product/{{product.id}}" *ngFor="let product of products">
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.releaseYear}}</td>
+            <td>{{product.ratings}}</td>
+            
+        </tr>
+    </tbody>
+</table>
+<!-- https://medium.com/@moshevilner/creating-shopping-cart-using-angular8-c6a5d4a0f0b3 -->

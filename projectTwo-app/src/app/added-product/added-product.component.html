@@ -1,0 +1,20 @@
+<h1>All products:</h1>
+
+<table *ngIf = "addedProduct">
+    <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>price</th>
+        <th>Rating</th>
+    </thead>
+    <tbody>
+        <!-- tr is the element that we want to repeat, so that's where we put the ngFor directive:-->
+        <tr  class = "product" routerLink="/product/{{product.id}}"   *ngFor="let product of addedProduct">
+            <!-- For each indiv. pet, we render some td elements to show the individual properties:-->
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.ratings}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,13 @@
+<div>
+    <h1>Login:</h1>
+    <label for = "users-id">Id:</label>
+    <input type = "text" id = "person-id" [(ngModel)] = "users.id"/>
+    <br />
+    <label for = "users-username">Password:</label>
+    <input type = "text" id = "person-username" [(ngModel)] = "users.username"/>
+    <br />
+    <label for = "users-password">Password:</label>
+    <input type = "password" id = "person-password" [(ngModel)] = "users.password"/>
+    <br/>
+    <button type = "button" (click) = "login()">Login</button>
+</div>

@@ -1,0 +1,17 @@
+<h1>Add Movie</h1>
+
+<form (submit)="add()">
+    <label for = "movie-name">Name:</label>
+    <input name = "name" required type = "text" id = "movie-name" [(ngModel)]="product.name"/>
+
+  
+    <!-- <label for = "movie-id">id</label>
+    <input name = "price" required type = "text" id = "movie-price" [(ngModel)]="product.id"/> -->
+
+    
+    <!-- <label for = "movie-released">Date Released</label>
+    <input name = "releasedY" required type = "text" id = "movie-released" [(ngModel)]="product.releaseYear"/>  -->
+
+    <input [ngStyle] = "{'display': validateProduct() ? 'inline' : 'none' }"   type = "submit" value = "Add Movie"/>
+
+</form>

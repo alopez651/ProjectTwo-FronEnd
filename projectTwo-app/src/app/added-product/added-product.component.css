@@ -1,0 +1,12 @@
+table, th, td {
+    border: 1px solid;
+    padding: 5px;
+}
+
+.pet {
+    cursor:pointer;
+}
+
+tr:hover {
+    background: #e3ffea;
+}

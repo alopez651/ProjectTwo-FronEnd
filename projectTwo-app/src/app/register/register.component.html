@@ -1,0 +1,21 @@
+<div>
+    <h1>Register</h1>
+    <label for = "person-name">Name:</label>
+    <input type = "text" id = "users-name" [(ngModel)] = "users.name"/>
+    <br />
+    
+    <label for = "person-username">Username:</label>
+    <input type = "text" id = "users-username" [(ngModel)] = "users.username"/>
+    <br />
+
+    <label for = "person-password">Password:</label>
+    <input type = "password" id = "users-password" [(ngModel)] = "users.password"/>
+    <br />
+
+    <button type="button" (click) = "register()">Register</button>
+</div>
+
+<div>
+    <h1>Preview</h1>
+    <h2>Name : {{users.name}}</h2>
+</div>
