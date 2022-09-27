@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UsersService } from '../services/users.service';
 import { SessionService } from '../services/session.service';
 import { CookieService } from 'ngx-cookie';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -14,6 +15,8 @@ export class ProductComponent implements OnInit {
   product!: Product;
 
   show_extra_content:boolean = false;
+  
+  
 
   userId!:Number;
   constructor(private productService: ProductService, private route: ActivatedRoute, 

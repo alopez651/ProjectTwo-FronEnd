@@ -2,6 +2,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../interfaces';
 import { ProductService } from '../services/product.service';
 import { Router } from '@angular/router';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { mergeMap, Observable } from 'rxjs';
 @Component({
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',
@@ -11,15 +13,16 @@ export class AddProductComponent implements OnInit {
   product!: Partial<Product>;
 
   
-  constructor(private productService: ProductService, private router:Router) { }
+  constructor(private productService: ProductService, private router:Router,
+              private httpClient:HttpClient) { }
 
   ngOnInit(): void {
     this.product = {
       name :"defaul name ",
-      // price: 0,
-      // ratings: 0,
-      // releaseYear: 0
-      
+      price: 0,
+      releaseYear: 0,
+      ratings: 0,
+      description: " "
     }
 
   }
@@ -30,9 +33,7 @@ export class AddProductComponent implements OnInit {
   }
   validateProduct(){
     if(this.product.name?.trim() == "")  return false;
-    // if(this.product.id ==)  return false;
-    //if(this.cart.releaseYea == "")  return false;
-    //if(this.product.ratings == 0)  return false;
+
     return true;
   }
 
@@ -49,5 +50,4 @@ export class AddProductComponent implements OnInit {
     alert("somehting went wrong with the fields.");
   }
  }
-
 }

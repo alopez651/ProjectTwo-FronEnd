@@ -1,6 +1,43 @@
 <div *ngIf="product">
-    <h1>cart id {{product.id}}</h1>
+    <h1>{{product.name}}</h1>
+    <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price Movie</th>
+        <th>Year released</th>
+        <th>Ratings</th>
+        <th>Description</th>
+        <th>Add</th>
+    </thead>
+    <tbody>
+        <tr class="product" routerLink="/product/{{product.id}}"> 
+            <!--  class="product" routerLink="/product/{{product.id}}" *ngFor="let product of products" -->
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.releaseYear}}</td>
+            <td>{{product.ratings}}</td>
+            <td>{{product.description}}</td>
+           <td> <button [ngClass] = "userId ? 'show': 'hide'" (click) = "addCart()">Add to cart</button> </td>
+        </tr>
+    </tbody>
     <label for = "name">Name:</label>
+    <input type = "text" id = "name" [(ngModel)] = "product.name"/>
+    <br />
+    <label for = "price">Price:</label>
+    <input type = "text" id = "price" [(ngModel)] = "product.price"/>
+    <br />
+    <label for = "rating">Rating:</label>
+    <input type = "text" id = "rating" [(ngModel)] = "product.ratings"/>
+    <br />
+    <textarea for="movie-des" rows="4" cols="50" [(ngModel)]="product.description">Movie Description</textarea>
+
+    <button (click) = "update()">update movie</button>
+    <button (click) = "delete()">Delete movie</button>
+</div>
+
+
+    <!-- <label for = "name">Name:</label>
     <input type = "text" id = "name" [(ngModel)] = "product.name"/>
     <br />
     <label for = "price">Price:</label>
@@ -11,5 +48,4 @@
     <br />
     <button (click) = "update()">update movie</button>
     <button (click) = "delete()">Delete movie</button>
-    <button [ngClass] = "userId ? 'show': 'hide'" (click) = "addCart()">Adopt Pet</button>
-</div>
+    <button [ngClass] = "userId ? 'show': 'hide'" (click) = "addCart()">Add to cart</button> -->

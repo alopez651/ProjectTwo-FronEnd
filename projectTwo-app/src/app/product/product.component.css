@@ -1,0 +1,7 @@
+table, th, td {
+    border: 1px solid;
+    padding: 5px;
+}
+tr:hover {
+    background: #e3ffea;
+}

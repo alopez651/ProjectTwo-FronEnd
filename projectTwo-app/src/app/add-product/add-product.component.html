@@ -5,13 +5,18 @@
     <input name = "name" required type = "text" id = "movie-name" [(ngModel)]="product.name"/>
 
   
-    <!-- <label for = "movie-id">id</label>
-    <input name = "price" required type = "text" id = "movie-price" [(ngModel)]="product.id"/> -->
+    <label for = "movie-id">Price</label>
+    <input name = "price" required type = "text" id = "movie-price" [(ngModel)]="product.price"/>
 
+    <label for = "movie-year">Year released</label>
+    <input name = "year" required type = "text" id = "movie-year" [(ngModel)]="product.releaseYear"/>
     
-    <!-- <label for = "movie-released">Date Released</label>
-    <input name = "releasedY" required type = "text" id = "movie-released" [(ngModel)]="product.releaseYear"/>  -->
+    <label for = "movie-ratings">Ratings</label>
+    <input name = "ratings" required type = "text" id = "movie-ratings" [(ngModel)]="product.ratings"/>
 
+    <textarea for="movie-des" rows="4" cols="50" name="des" [(ngModel)]="product.description">Movie Description</textarea>
+
+<br> <br>
     <input [ngStyle] = "{'display': validateProduct() ? 'inline' : 'none' }"   type = "submit" value = "Add Movie"/>
 
 </form>

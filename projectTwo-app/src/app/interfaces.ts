@@ -4,6 +4,7 @@ export interface Product{
     price: Number,
     releaseYear: Number,
     ratings: Number
+    description: String
 }
 
 export interface Users {
