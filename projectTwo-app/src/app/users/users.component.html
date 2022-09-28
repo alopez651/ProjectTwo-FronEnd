@@ -1,0 +1,35 @@
+<div *ngIf="users">
+    <h1>{{users.name}}</h1>
+    <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Products</th>
+        
+    </thead>
+    <tbody>
+        <tr class="users" routerLink="/users/{{users.id}}"> 
+            <!--  class="product" routerLink="/product/{{product.id}}" *ngFor="let product of products" -->
+            <td>{{users.id}}</td>
+            <td>{{users.name}}</td>
+            <td>{{users.username}}</td>
+            <td>{{users.password}}</td>
+            <td>{{users.products}}</td>
+            
+           <td> <button [ngClass] = "userId ? 'show': 'hide'" (click) = "update()">Update user</button> </td>
+        </tr>
+    </tbody>
+    <label for = "name">Name:</label>
+    <input type = "text" id = "name" [(ngModel)] = "users.name"/>
+    <br />
+    <label for = "username">Username:</label>
+    <input type = "text" id = "price" [(ngModel)] = "users.username"/>
+    <br />
+    <label for = "password">Password:</label>
+    <input type = "text" id = "password" [(ngModel)] = "users.password"/>
+    <br />
+    
+
+    <button (click) = "update()">update user</button>
+</div>

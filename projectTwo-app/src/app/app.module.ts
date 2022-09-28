@@ -17,6 +17,8 @@ import { LogoutComponent } from './logout/logout.component';
 import { RegisterComponent } from './register/register.component';
 import { AddedProductComponent } from './added-product/added-product.component';
 import { AddedComponent } from './added/added.component';
+import { UsersComponent } from './users/users.component';
+import { UserssComponent } from './userss/userss.component';
 
 // setting up routes
 const routes:Routes =[
@@ -28,7 +30,9 @@ const routes:Routes =[
   {path: "logout", component: LogoutComponent},
   {path: "register", component: RegisterComponent},
   {path: "addedProduct", component: AddedProductComponent},
-  {path: "added", component:AddedComponent}
+  {path: "added", component: AddedComponent },
+  {path: "users", component: UsersComponent },
+  {path: "userss", component: UserssComponent}
 ]
 
 @NgModule({
@@ -42,7 +46,9 @@ const routes:Routes =[
     LogoutComponent,
     RegisterComponent,
     AddedProductComponent,
-    AddedComponent
+    AddedComponent,
+    UsersComponent,
+    UserssComponent
   ],
   imports: [
     BrowserModule,
