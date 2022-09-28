@@ -1,5 +1,10 @@
 {
   "dependencies": {
+    "@fortawesome/angular-fontawesome": "^0.11.1",
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "font-awesome": "^4.7.0",
     "ng2-file-upload": "^1.4.0"
   }
 }
