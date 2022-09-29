@@ -13,7 +13,8 @@ export class LogoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.cookieService.removeAll();
-    //this.router.navigate(["/products"]); 
+    alert("Logout successful!")
+    this.router.navigate(["/login"]); 
   }
 
 }

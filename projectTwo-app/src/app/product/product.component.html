@@ -18,7 +18,7 @@
             <td>{{product.releaseYear}}</td>
             <td>{{product.ratings}}</td>
             <td>{{product.description}}</td>
-           <td> <button [ngClass] = "userId ? 'show': 'hide'" (click) = "addCart()">Add to cart</button> </td>
+           <td> <button [ngClass] = "userId ? 'show': 'hide'" (click) = "addToCart()">Add to cart</button> </td>
         </tr>
     </tbody>
     <label for = "name">Name:</label>
@@ -33,7 +33,7 @@
     <textarea for="movie-des" rows="4" cols="50" [(ngModel)]="product.description">Movie Description</textarea>
 
     <button (click) = "update()">update movie</button>
-    <button (click) = "delete()">Delete movie</button>
+    <button (click) = "deleteProduct()">Delete movie</button>
 </div>
 
 

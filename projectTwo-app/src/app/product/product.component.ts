@@ -18,22 +18,23 @@ export class ProductComponent implements OnInit {
   
   
 
-  userId!:Number;
+  userId!:number;
+  productId!:number;
   constructor(private productService: ProductService, private route: ActivatedRoute, 
               private router: Router, private usersService: UsersService, 
               private sessionService:SessionService, private cookieService:CookieService) { }
 
   ngOnInit(): void {
     this.userId = Number(this.cookieService.get("userId"));
+    this.productId = Number(this.route.snapshot.paramMap.get("id"));
 
-    let productId: Number = Number(this.route.snapshot.paramMap.get("id"));
-    this.productService.getById(productId).subscribe(
+    this.productService.getById(this.productId).subscribe(
       returnProduct => {
         this.product = returnProduct;
         console.log(returnProduct);
       }
     )
-  }
+}
 
   update(){
     this.productService.updateProduct(this.product).subscribe(
@@ -43,18 +44,25 @@ export class ProductComponent implements OnInit {
     )
   }
 
-  delete(){
+  deleteProduct(){
     this.productService.deleteProduct(this.product.id).subscribe();
     alert("item has been deleted");
     this.router.navigate(['/products'])
   }
   
-  addCart(){
-    this.usersService.addToCart(this.userId, this.product.id).subscribe(
-      returnVal => {
-        this.router.navigate(["/added"])
-      }
-    )
+  addToCart(){
+    let userId = Number(this.cookieService.get("userId"));
+    console.log(userId);
+    if(isNaN(userId)){
+      alert("must be login first");
+      this.router.navigate(["/login"]);
+    }
+    else{
+      this.usersService.addToCart(this.userId, this.product.id).subscribe(
+        returnVal => {
+          this.router.navigate(["/added"])
+        }
+      )
+    }
   }
-
 }

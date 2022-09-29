@@ -31,10 +31,10 @@ export class RegisterComponent implements OnInit {
   register() {
     this.usersService.register(this.users).subscribe({
       next: (returnVal) => {
-        alert(`Thank You! You are now register. Your ID is ${returnVal.id}`)
+        alert(`Thank You! ${returnVal.name} You are now register. Your ID is ${returnVal.id}`)
         
-        this.cookieService.put("userId", String(returnVal.id))
-        this.router.navigate(["/products"])
+        this.cookieService.put("userId", String(returnVal.id));
+        this.router.navigate(["/products"]);
       },
       error:() => {alert("Resgistration unsuccessful!")}
     });
